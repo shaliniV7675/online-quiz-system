@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container-home">
+        <h1>Online Quiz System</h1>
+        <h3>Test your knowledge of Web Development</h3>
+
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <ul>
+                <li>There are 6 questions in total</li>
+                <li>Each question has one correct answer</li>
+                <li>Select the best answer for each question</li>
+                <li>You have 60 seconds to complete the quiz</li>
+                <li>Submit the quiz after answering all questions</li>
+            </ul>
+            <a href="{{ url_for('quiz') }}">
+                <button class="start-btn">Start Quiz</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
