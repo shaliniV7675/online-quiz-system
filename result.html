@@ -4,10 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Result</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f740;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container-result {
+            text-align: center;
+            padding: 40px 20px;
+            width: 100%;
+        }
+
+        .container-result h1 {
+            font-size: 38px;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            text-decoration: underline;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.92);
+            width: 90%;
+            max-width: 440px;
+            padding: 40px 36px;
+            border-radius: 16px;
+            margin: 0 auto;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .score-text {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .percentage-text {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .feedback {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 24px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .feedback.excellent {
+            color: #1a7a1a;
+            background: #e6f9e6;
+        }
+
+        .feedback.good {
+            color: #0055aa;
+            background: #e6f0ff;
+        }
+
+        .feedback.poor {
+            color: #cc5500;
+            background: #fff3e6;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 12px 36px;
+            border: none;
+            border-radius: 8px;
+            background: #3a1608;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.25s, transform 0.15s;
+            margin-top: 16px;
+        }
+
+        .btn:hover {
+            background: #6b2c10;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-
 
     <div class="container-result">
         <h1>Quiz Result</h1>

@@ -4,7 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f740;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 680px;
+            padding: 30px 20px;
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .quiz-header h1 {
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: #cc0000;
+            background: rgba(255, 255, 255, 0.9);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 8px;
+        }
+
+        .question-card {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        .question-card h2 {
+            font-size: 15px;
+            color: #888;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .question-card p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 14px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            color: #333;
+            padding: 10px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 6px;
+            border: 2px solid transparent;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .option:hover {
+            background: rgba(58, 22, 8, 0.07);
+            border-color: #3a1608;
+        }
+
+        .option input[type="radio"] {
+            accent-color: #3a1608;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .btn-submit {
+            background: #e65c00;
+            width: 100%;
+            font-size: 18px;
+            padding: 14px;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.25s, transform 0.15s;
+        }
+
+        .btn-submit:hover {
+            background: #bf4500;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
 
@@ -40,6 +150,20 @@
         </form>
     </div>
 
-    <script src="{{ url_for('static', filename='css/js/script.js') }}"></script>
+    <script>
+        let time = 60;
+        const timerDisplay = document.getElementById('time');
+
+        const timer = setInterval(function () {
+            time--;
+            timerDisplay.textContent = time;
+
+            if (time <= 0) {
+                clearInterval(timer);
+                alert('Time is up! Submitting your quiz.');
+                document.getElementById('quizForm').submit();
+            }
+        }, 1000);
+    </script>
 </body>
 </html>

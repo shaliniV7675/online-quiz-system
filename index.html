@@ -4,7 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Quiz</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f740;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-wrapper {
+            width: 100%;
+            max-width: 520px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        .hero-icon {
+            font-size: 64px;
+            margin-bottom: 10px;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-8px); }
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            color: #1a1a1a;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            color: #444;
+        }
+
+        .info-bar {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 10px 18px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #3a1608;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .info-icon {
+            font-size: 18px;
+        }
+
+        .instructions-card {
+            background: rgba(255, 255, 255, 0.93);
+            width: 100%;
+            border-radius: 16px;
+            padding: 32px 30px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+        }
+
+        .instructions-card h2 {
+            font-size: 22px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .instructions-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 28px;
+        }
+
+        .instructions-card li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: #333;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            line-height: 1.5;
+        }
+
+        .instructions-card li:last-child {
+            border-bottom: none;
+        }
+
+        .bullet {
+            background: #3a1608;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .btn-start {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            background: #3a1608;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background 0.25s, transform 0.15s;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-start:hover {
+            background: #6b2c10;
+            transform: translateY(-2px);
+        }
+
+        .btn-start:active {
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
 
