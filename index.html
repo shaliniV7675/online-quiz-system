@@ -8,23 +8,45 @@
 </head>
 <body>
 
-    <div class="container-home">
-        <h1>Online Quiz System</h1>
-        <h3>Test your knowledge of Web Development</h3>
+    <div class="home-wrapper">
 
-        <div class="instructions">
-            <h2>Instructions</h2>
-            <ul>
-                <li>There are 6 questions in total</li>
-                <li>Each question has one correct answer</li>
-                <li>Select the best answer for each question</li>
-                <li>You have 60 seconds to complete the quiz</li>
-                <li>Submit the quiz after answering all questions</li>
-            </ul>
-            <a href="{{ url_for('quiz') }}">
-                <button class="start-btn">Start Quiz</button>
-            </a>
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-icon">🧠</div>
+            <h1>Online Quiz System</h1>
+            <p class="hero-sub">Test your Web Development knowledge in 60 seconds!</p>
         </div>
+
+        <!-- Info Bar -->
+        <div class="info-bar">
+            <div class="info-item">
+                <span class="info-icon">❓</span>
+                <span>6 Questions</span>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">⏱️</span>
+                <span>60 Seconds</span>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">🏆</span>
+                <span>Instant Result</span>
+            </div>
+        </div>
+
+        <!-- Instructions Card -->
+        <div class="instructions-card">
+            <h2>📋 Instructions</h2>
+            <ul>
+                <li><span class="bullet">1</span> There are <strong>6 questions</strong> in total</li>
+                <li><span class="bullet">2</span> Each question has <strong>one correct answer</strong></li>
+                <li><span class="bullet">3</span> Select the best answer for each question</li>
+                <li><span class="bullet">4</span> You have <strong>60 seconds</strong> to complete the quiz</li>
+                <li><span class="bullet">5</span> The quiz <strong>auto-submits</strong> when time runs out</li>
+            </ul>
+
+            <a href="{{ url_for('quiz') }}" class="btn-start">🚀 Start Quiz</a>
+        </div>
+
     </div>
 
 </body>
